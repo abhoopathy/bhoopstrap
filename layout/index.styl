@@ -8,19 +8,19 @@
     margin auto
 
     for n in 1 2 3 4 5 6 7 8 9 10 11 12
-        .row-{n}
+        .{q}-row-{n}
             row(n)
 
     for n in 1 2 3 4 5 6 7 8 9 10 11 12
-        .column-{n}
+        .{q}-column-{n}
             column(n)
 
     for n in 1 2 3 4 5 6 7 8 9 10 11 12
-        .push-{n}
+        .{q}-push-{n}
             push(n)
 
     for n in 1 2 3 4 5 6 7 8 9 10 11 12
-        .pull-{n}
+        .{q}-pull-{n}
             pull(n)
 
 .{q}-margin-center
@@ -45,3 +45,4 @@
 .{q}-content-wrapper
     width 100%
     padding 20px 0
+    clearfix()

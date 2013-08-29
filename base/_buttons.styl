@@ -9,6 +9,12 @@
     border none
     cursor pointer
 
+    &:hover
+        background-color $bs-button-hover-color
+
     &.{q}-btn-cta
         background-color $bs-button-cta-color
         color $bs-button-text-color
+
+        &:hover
+            background-color darken($bs-button-cta-color, 10%)

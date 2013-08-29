@@ -27,6 +27,7 @@ html>body // ignored by ie6
 
 p
     vertical-rhythm-p($bs-base-font-size)
+    font-family $bs-body-font-stack
 
 .{q}-h1
     vertical-rhythm($bs-base-font-size+18px)
@@ -61,9 +62,11 @@ code
     padding-top ($bs-base-font-size*175/50)
     margin-bottom ($bs-base-font-size*25/50)
     width 100%
-    border-bottom $bs-hrule-style
+    border-top $bs-hrule-style
+
 
 a
     color $bs-link-color
+    cursor pointer
 a:hover
     color $bs-link-hover-color
