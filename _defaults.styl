@@ -1,0 +1,43 @@
+/*The conditional assignment operator ?= (aliased as :=) lets
+us define variables without clobbering old values (if
+present). This operator expands to an is defined binary
+operation within a ternary.*/
+
+$bhoopstrap-prefix     ?= 'bs'
+q = $bhoopstrap-prefix // shorthand for bhoopstrap-prefix
+
+$bs-secondary-color    ?= #E5E5E5
+
+
+/* Text Colors */
+$bs-base-text-color    ?= #565656
+
+$bs-link-color         ?= darken(blue, 30%)
+$bs-link-hover-color   ?= lighten(#708E6E, 30%)
+
+$bs-button-color       ?= #5D5D5D
+$bs-button-text-color  ?= white
+$bs-button-cta-color   ?= #B76666
+$bs-button-radius      ?= 3px
+
+
+/* Typography */
+$bs-base-font-size     ?= 16px
+$bs-base-unit-height   ?= 22px
+$bs-font-stack         ?= 'Helvetica Neue', 'Helvetica', 'Arial', Sans-serif
+
+$bs-hrule-color        ?= lighten($bs-base-text-color, 80%)
+$bs-hrule-style        ?= 1px solid $ab-hrule-color
+
+
+/* Forms */
+$bs-form-color         ?= #B76666
+$bs-form-text-color    ?= #747474
+$bs-form-input-padding ?= 8px
+$bs-form-input-radius  ?= 3px
+
+
+/* Layout */
+$bs-grid-columns       ?= 12
+$bs-grid-column-width  ?= 60px
+$bs-grid-gutter-width  ?= 20px
