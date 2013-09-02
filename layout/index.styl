@@ -1,0 +1,49 @@
+
+/* Grid */
+
+@import '_grid.styl'
+
+.{q}-grid-container
+    clearfix()
+    width _total-width(_columns = columns)
+    margin auto
+
+    for n in 1 2 3 4 5 6 7 8 9 10 11 12
+        .{q}-row-{n}
+            row(n)
+
+    for n in 1 2 3 4 5 6 7 8 9 10 11 12
+        .{q}-column-{n}
+            column(n)
+
+    for n in 1 2 3 4 5 6 7 8 9 10 11 12
+        .{q}-push-{n}
+            push(n)
+
+    for n in 1 2 3 4 5 6 7 8 9 10 11 12
+        .{q}-pull-{n}
+            pull(n)
+
+.{q}-margin-center
+    margin-left auto
+    margin-right auto
+
+.{q}-float-l
+    float left
+
+.{q}-float-r
+    float right
+
+.{q}-txt-align-c
+    text-align center
+
+.{q}-txt-align-l
+    text-align left
+
+.{q}-inline-block
+    display inline-block
+
+.{q}-content-wrapper
+    width 100%
+    padding 20px 0
+    clearfix()
