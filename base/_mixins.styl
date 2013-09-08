@@ -1,0 +1,22 @@
+// background transparency
+// https://gist.github.com/hellosmithy/1769124
+background-transparency(color, alpha = 1)
+  ms-filter = ms-filter-hex(color, alpha)
+  background rgb(color)
+  background rgba(color, alpha)
+  .lt-ie8 &
+    zoom 1
+  .lt-ie9 &
+    background transparent
+    filter s('progid:DXImageTransform.Microsoft.gradient(startColorstr=%s,endColorstr=%s)', ms-filter, ms-filter)
+    &:nth-child(n)
+      filter none
+
+// create alpha hex code for ms-filter
+ms-filter-hex(color, alpha = 1)
+  hex-value = ('0') ('1') ('2') ('3') ('4') ('5') ('6') ('7') ('8') ('9') ('A') ('B') ('C') ('D') ('E') ('F')
+  red = unquote(hex-value[round(red(color) / 16)] + hex-value[round(red(color) % 16)])
+  green = unquote(hex-value[round(green(color) / 16)] + hex-value[round(green(color) % 16)])
+  blue = unquote(hex-value[round(blue(color) / 16)] + hex-value[round(blue(color) % 16)])
+  alpha-hex = unquote(hex-value[(round(((alpha * 255) / 16)) - 1)] + hex-value[(round(((alpha * 255) % 16)) - 1)])
+  unquote('#') + alpha-hex + red + green + blue

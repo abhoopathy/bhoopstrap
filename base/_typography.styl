@@ -2,7 +2,7 @@
 //http://24ways.org/2006/compose-to-a-vertical-rhythm/
 vertical-rhythm($font-size)
     font-size ($font-size / $bs-base-font-size)em
-    line-height ($bs-base-unit-height/$font-size)em
+    line-height ($bs-base-unit-height/$bs-base-font-size)em
     margin-top ($bs-base-unit-height*(80/50)/$font-size)em
     margin-bottom ($bs-base-unit-height*(20/50)/$font-size)em
 
@@ -60,3 +60,8 @@ in their own hierarchy
     margin-bottom ($bs-base-font-size*25/50)
     width 100%
     border-top $bs-hrule-style
+
+.{$bs-master-class} // ignored by ie6
+    p
+        vertical-rhythm-p($bs-base-font-size)
+        font-family $bs-body-font-stack
