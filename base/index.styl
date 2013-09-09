@@ -1,4 +1,8 @@
-global-reset()
+
+@import '_mixins'
+@import '_typography'
+@import '_forms'
+@import '_buttons'
 
 .{$bs-master-class} // ignored by ie6
     font-size $bs-base-font-size
@@ -11,6 +15,7 @@ global-reset()
     p
         vertical-rhythm-p($bs-base-font-size)
         font-family $bs-body-font-stack
+
     code
         vertical-rhythm-p($bs-base-font-size)
 
@@ -23,9 +28,3 @@ global-reset()
 
     a:hover
         color $bs-link-hover-color
-
-
-@import '_mixins'
-@import '_typography'
-@import '_forms'
-@import '_buttons'
