@@ -1,7 +1,26 @@
 global-reset()
 
-*
-    box-sizing border-box
+.{$bs-master-class}
+    font-size $bs-base-font-size
+    font-family $bs-font-stack
+    color $bs-base-text-color
+    //font-size 75% // 12px
+    *
+        box-sizing border-box
+
+    code
+        vertical-rhythm-p($bs-base-font-size)
+
+        pre
+            margin 0
+
+    a
+        color $bs-link-color
+        cursor pointer
+
+    a:hover
+        color $bs-link-hover-color
+
 
 @import '_mixins'
 @import '_typography'

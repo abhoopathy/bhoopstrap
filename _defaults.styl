@@ -1,10 +1,14 @@
-/*The conditional assignment operator ?= (aliased as :=) lets
+
+/*
+### Variables
+The conditional assignment operator ?= (aliased as :=) lets
 us define variables without clobbering old values (if
 present). This operator expands to an is defined binary
-operation within a ternary.*/
-
+operation within a ternary.
+ */
 $bhoopstrap-prefix     ?= 'bs'
 q = $bhoopstrap-prefix // shorthand for bhoopstrap-prefix
+$bs-master-class       ?= $bhoopstrap-prefix
 
 $bs-secondary-color    ?= #E5E5E5
 

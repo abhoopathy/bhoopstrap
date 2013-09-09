@@ -2,7 +2,7 @@
 //http://24ways.org/2006/compose-to-a-vertical-rhythm/
 vertical-rhythm($font-size)
     font-size ($font-size / $bs-base-font-size)em
-    line-height ($bs-base-unit-height/$font-size)em
+    line-height ($bs-base-unit-height/$bs-base-font-size)em
     margin-top ($bs-base-unit-height*(80/50)/$font-size)em
     margin-bottom ($bs-base-unit-height*(20/50)/$font-size)em
 
@@ -17,18 +17,17 @@ vertical-rhythm-p($font-size)
         margin-bottom ($bs-base-unit-height/$font-size)em
 
 
-body // for ie6
-    font-family $bs-font-stack
-    color $bs-base-text-color
-    font-size 75% // 12px
 
-html>body // ignored by ie6
-    font-size $bs-base-font-size
+/*
+## Headings
+These are semantic classes so that the tag names can be arranged
+in their own hierarchy
 
-p
-    vertical-rhythm-p($bs-base-font-size)
-    font-family $bs-body-font-stack
-
+    <div class='bs-h1'>Heading 1</div>
+    <div class='bs-h2'>Heading 2</div>
+    <div class='bs-h3'>Heading 3</div>
+    <div class='bs-h4'>Heading 4</div>
+*/
 .{q}-h1
     vertical-rhythm($bs-base-font-size+18px)
     font-weight bold
@@ -45,12 +44,10 @@ p
     vertical-rhythm($bs-base-font-size)
     font-weight bold
     text-transform uppercase
-
-code
-    vertical-rhythm-p($bs-base-font-size)
-
-    pre
-        margin 0
+/*
+## Typography Mixins
+`ab-rhythm` gives any class vertical rhythm
+*/
 
 .{q}-rhythm
     margin-top ($bs-base-unit-height*(80/50)/$bs-base-font-size)em
@@ -64,9 +61,7 @@ code
     width 100%
     border-top $bs-hrule-style
 
-
-a
-    color $bs-link-color
-    cursor pointer
-a:hover
-    color $bs-link-hover-color
+.{$bs-master-class} // ignored by ie6
+    p
+        vertical-rhythm-p($bs-base-font-size)
+        font-family $bs-body-font-stack
