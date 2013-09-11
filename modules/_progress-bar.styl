@@ -1,0 +1,26 @@
+/*
+### Module: Progress Bar
+
+    <div class='bs-progress-bar-wrapper'>
+        <div class='bs-progress-bar' style='width: 25%'>
+        </div>
+    </div>
+
+ */
+
+$bs-progress-bar-color ?= #B76666
+$bs-progress-bar-line-color ?= $bs-hrule-color
+
+.{q}-progress-bar-wrapper
+    height 20px
+    border-radius 3px
+    border 1px solid $bs-base-text-color
+    padding 1px
+    width 100%
+
+    .{q}-progress-bar
+        height 100%
+        border-radius 3px
+        background-color $bs-progress-bar-color
+        -webkit-transition width 250ms
+
