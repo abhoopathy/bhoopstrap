@@ -69,3 +69,12 @@ in their own hierarchy
     p
         vertical-rhythm-p($bs-base-font-size)
         font-family $bs-body-font-stack
+
+    a
+        color $bs-link-color
+        cursor pointer
+        &.{q}-is-active
+            color $bs-link-active-color !important
+
+        &:hover
+            color $bs-link-hover-color
