@@ -1,0 +1,121 @@
+$bs-tooltip-bg-color      ?=  #3E2E2E
+$bs-tooltip-text-color    ?=  #D4D4D4
+$bs-tooltip-padding       ?=  5px
+$bs-tooltip-triangle-size ?=  12px
+
+/*
+Only if you need multiple tt sizes. Otherwise, just use
+$bs-tooltip-width
+ */
+$bs-tooltip-s-width= 100px
+$bs-tooltip-m-width= 150px
+$bs-tooltip-l-width= 200px
+
+
+triangle-indicator($size)
+    height $size
+    width $size
+    position absolute
+    content ''
+    transform rotate(45deg)
+
+.{q}-tooltip-wrapper
+    position relative
+    .{q}-tooltip
+        visibility hidden
+
+    &:hover
+        .{q}-tooltip
+            visibility visible
+
+
+.{q}-tooltip
+    position absolute
+    z-index 1
+    if $bs-tooltip-width is defined
+        max-width $bs-tooltip-width
+
+    &:before
+        triangle-indicator $bs-tooltip-triangle-size
+        position absolute
+        left 50%
+        margin-left ($bs-tooltip-triangle-size/-2)
+        background-color $bs-tooltip-bg-color
+
+    // TODO: do we need this?
+    &.{q}-tooltip-ellipsis
+        overflow ellipsis
+        white-space pre
+
+.{q}-tooltip-content
+    max-width 100%
+    display inline-block
+    padding $bs-tooltip-padding
+    background-color $bs-tooltip-bg-color
+    border-radius 3px
+    color $bs-tooltip-text-color
+
+    font-size .9em
+    line-height 1.3em
+
+/* Classes for setting tooltip size*/
+.{q}-tt-s
+    width $bs-tooltip-s-width
+.{q}-tt-m
+    width $bs-tooltip-m-width
+.{q}-tt-l
+    width $bs-tooltip-l-width
+
+/* Classes for setting where the tooltip indicator goes */
+
+/*
+    _ ____________^_
+    |              |
+    |______________|
+
+*/
+.{q}-tt-arrow-align-r
+    right ($bs-tooltip-padding * -1)
+    text-align right
+    &:before
+        right ($bs-tooltip-padding * 2 + $bs-tooltip-triangle-size/2)
+        left auto
+
+/*
+    _^______________
+    |              |
+    |______________|
+
+*/
+.{q}-tt-arrow-align-l
+    left ($bs-tooltip-padding * -1)
+    text-align left
+    &:before
+        left ($bs-tooltip-padding * 2 + $bs-tooltip-triangle-size/2)
+        right auto
+
+
+.{q}-tt-arrow-top
+    &:before
+        top ($bs-tooltip-triangle-size/-2)
+
+.{q}-tt-arrow-bottom
+    &:before
+        bottom ($bs-tooltip-triangle-size/-2)
+
+/*
+    ________________
+    |              |
+   <               |
+    |______________|
+
+*/
+.{q}-tt-arrow-left
+    top 0
+    margin-left 0
+
+    &:before
+        left 0
+        top 50%
+        margin-top ($bs-tooltip-triangle-size/-2)
+
