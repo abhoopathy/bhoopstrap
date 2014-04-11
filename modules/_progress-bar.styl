@@ -8,19 +8,22 @@
 
  */
 
-$bs-progress-bar-color ?= #B76666
-$bs-progress-bar-line-color ?= $bs-hrule-color
+$bs-progress-bar-height        ?= 20px
+$bs-progress-bar-color         ?= #B76666
+$bs-progress-bar-border-color  ?= $bs-hrule-color
+$bs-progress-bar-border-radius ?= 2px
+$bs-progress-bar-border-space  ?= 1px
 
 .{q}-progress-bar-wrapper
-    height 20px
-    border-radius 3px
-    border 1px solid $bs-base-text-color
-    padding 1px
+    height $bs-progress-bar-height
+    border-radius ($bs-progress-bar-border-radius + $bs-progress-bar-border-space)
+    border 1px solid $bs-progress-bar-border-color
+    padding $bs-progress-bar-border-space
     width 100%
 
     .{q}-progress-bar
         height 100%
-        border-radius 3px
+        border-radius $bs-progress-bar-border-radius
         background-color $bs-progress-bar-color
         -webkit-transition width 250ms
-
+        line-height ($bs-progress-bar-height - $bs-progress-bar-border-space)
