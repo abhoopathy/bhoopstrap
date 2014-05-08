@@ -20,3 +20,8 @@ ms-filter-hex(color, alpha = 1)
   blue = unquote(hex-value[round(blue(color) / 16)] + hex-value[round(blue(color) % 16)])
   alpha-hex = unquote(hex-value[(round(((alpha * 255) / 16)) - 1)] + hex-value[(round(((alpha * 255) % 16)) - 1)])
   unquote('#') + alpha-hex + red + green + blue
+
+circle(n)
+    width n
+    height n
+    border-radius n

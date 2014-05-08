@@ -1,0 +1,46 @@
+
+$bs-modal-top            ?= 20%
+$bs-modal-max-height     ?= 60%
+$bs-modal-padding        ?= 20px
+$bs-modal-width          ?= $bs-grid-columns * ($bs-grid-column-width + $bs-grid-gutter-width) + $bs-modal-padding * 2
+$bs-modal-screen-opacity ?= .5
+$bs-modal-close-size     ?= 40px
+
+.{q}-modal-screen
+    position fixed
+    top 0
+    left 0
+    bottom 0
+    right 0
+    background-color rgba(0,0,0,$bs-modal-screen-opacity)
+
+.{q}-modal-wrapper
+    position fixed
+    width $bs-modal-width
+    margin-left ($bs-modal-width * -0.5)
+    left 50%
+    padding $bs-modal-padding
+    box-shadow 0px 5px 100px rgba(0,0,0,.3)
+    max-height $bs-modal-max-height
+    top $bs-modal-top
+    background-color white
+    border-radius 5px
+    overflow-y auto
+
+.{q}-modal-close
+    circle $bs-modal-close-size
+    position fixed
+    top $bs-modal-top
+    margin-top ($bs-modal-close-size * -0.5)
+    left 50%
+    margin-left ($bs-modal-width - $bs-modal-close-size) * 0.5
+    line-height $bs-modal-close-size
+    background-color darken(grey, 50%)
+    text-align center
+    color white
+    font-size 30px
+    transform rotate(45deg)
+    cursor pointer
+    &:hover
+        transition transform 200ms
+        transform rotate(45deg) scale(1.2, 1.2)
