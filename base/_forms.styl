@@ -1,8 +1,5 @@
 .{q}-form
 
-    & > *:not(:first-child)
-        margin-left 8px
-
     input[type='text'], input[type='email'],
     input[type='password'], input[type='url'], textarea
         font-family $bs-font-stack
@@ -10,12 +7,18 @@
         color $bs-base-text-color
         padding 10px
         border-radius: $bs-form-input-radius
-        border 1px solid rgba(150,150,150,0.45)
+        border 1px solid $bs-form-border-color
         outline none
 
-
-        background-color #E5E5E5
+        background-color $bs-form-bg-color
 
         &:focus
-            border 1px solid #8F8F8F
+            border 1px solid $bs-form-focus-border-color
+
+    & > *:not(:first-child)
+        margin-left 8px
+
+    &.ft-form-vertical
+        & > *:not(:first-child)
+            margin-left 0
 
