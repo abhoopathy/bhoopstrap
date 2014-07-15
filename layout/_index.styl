@@ -58,3 +58,16 @@
 
 .{q}-clearfix
     clearfix()
+
+for n in (1...10)
+    .{q}-m-top-{n}
+        margin-top 0em + n !important
+    .{q}-m-bot-{n}
+        margin-bottom 0em + n !important
+for p in (1...9)
+    .{q}-m-top-1p{p}
+        margin-top 1em + (.1 * p) !important
+    .{q}-m-top-p{p}
+        margin-top 0em + (.1 * p) !important
+    .{q}-m-bot-p{p}
+        margin-bottom 0em + (.1 * p) !important
