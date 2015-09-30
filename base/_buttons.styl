@@ -13,22 +13,27 @@
 .{q}-btn
     font-family $bs-font-stack
     font-size 1em
-    background-color $bs-button-color
-    color $bs-button-text-color
+    border 2px solid $bs-button-color
+    background-color rgba($bs-button-color, 0%)
+    color $bs-button-color
     border-radius $bs-button-radius
     padding 11px 19px
-    border none
-    cursor pointer
+    cursor pointer !important
+
+    &:focus
+        outline: 0
 
     &:hover
-        background-color $bs-button-hover-color
+        background-color rgba($bs-button-color, 10%)
 
     &.{q}-btn-cta
-        background-color $bs-button-cta-color
-        color $bs-button-text-color
+        background none
+        border 2px solid $bs-button-cta-color
+        color $bs-button-cta-color
+        background-color rgba($bs-button-cta-color, 0%)
 
         &:hover
-            background-color darken($bs-button-cta-color, 10%)
+            background-color rgba($bs-button-cta-color, 10%)
 
     /*
     ### Size variations
